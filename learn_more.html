@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title >PinkScan - Know More About Breast Cancer</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="static/style.css">
+    <!-- Google Fonts for Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Animate.css for animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fff;
+            color: #333333;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            background: #fff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            padding: 10px 0;
+        }
+
+        .navbar-brand, .nav-link {
+            color: #333333 !important;
+            font-weight: 600;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .navbar-brand:hover, .nav-link:hover {
+            color: #ffb6c1 !important;
+            transform: scale(1.05);
+        }
+
+        .content {
+            background: #fff;
+            padding: 80px 20px 40px;
+            margin-top: 56px;
+        }
+
+        .resources {
+            background: #f5f5f5;
+            padding: 60px 0;
+        }
+
+        .btn-outline-light-pink {
+            color: #ffb6c1;
+            border: 2px solid #ffb6c1;
+            background-color: transparent;
+            border-radius: 25px;
+            padding: 10px 20px;
+            font-weight: 600;
+            transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn-outline-light-pink:hover {
+            background: #ffb6c1;
+            color: #fff;
+            transform: scale(1.05);
+        }
+
+        /* Animations */
+        .animate__fadeIn, .animate__fadeInLeft, .animate__fadeInRight, .animate__fadeInDown {
+            animation-duration: 1.8s;
+        }
+
+        .animate__fadeIn {
+            animation-delay: 0.2s;
+        }
+
+        .animate__fadeInLeft {
+            animation-delay: 0.4s;
+        }
+
+        .animate__fadeInRight {
+            animation-delay: 0.6s;
+        }
+
+        .animate__fadeInDown {
+            animation-delay: 0.8s;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .content, .resources {
+                padding: 40px 0;
+            }
+
+            .btn-outline-light-pink {
+                padding: 8px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand animate__animated animate__bounceIn" href="index.html" style="color: #333333; font-weight: bold;">PinkScan</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link animate__animated animate__fadeInLeft" href="index.html" style="color: #333333; font-weight: bold;">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link animate__animated animate__fadeInLeft" href="about.html" style="color: #333333; font-weight: bold; animation-delay: 0.2s;">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link animate__animated animate__fadeInLeft" href="http://localhost:8501" target="_blank" style="color: #333333; font-weight: bold; animation-delay: 0.4s;">Prediction Tool</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link animate__animated animate__fadeInLeft" href="contact.html" style="color: #333333; font-weight: bold; animation-delay: 0.6s;">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link animate__animated animate__fadeInLeft" href="learn_more.html" style="color: #333333; font-weight: bold; animation-delay: 0.8s;">Learn More</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Learn More Content -->
+    <div class="content container my-5 pt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 animate__animated animate__fadeIn">
+                <h1 class="text-pink mt-4 fw-bold">Know More About Breast Cancer</h1>
+                <p class="lead text-dark-grey">Breast cancer is a significant global health concern, affecting millions of women—and some men—each year. Understanding its causes, symptoms, and prevention strategies is crucial for early detection and effective management. PinkScan is here to provide insights and tools to help you take charge of your health.</p>
+                
+                <h3 class="text-pink mt-4 fw-bold">What is Breast Cancer?</h3>
+                <p class="text-dark-grey">Breast cancer originates in the breast tissue, most commonly in the ducts or lobules. It occurs when breast cells grow abnormally and form tumors. According to the World Health Organization (WHO), breast cancer is the most common cancer among women worldwide, with over 2.3 million new cases diagnosed annually. Risk factors include age, family history, genetic mutations (e.g., BRCA1 and BRCA2), hormonal factors, and lifestyle choices.</p>
+
+                <h3 class="text-pink mt-4 fw-bold">Symptoms and Early Signs</h3>
+                <p class="text-dark-grey">Recognizing the symptoms of breast cancer can lead to earlier diagnosis and treatment. Common signs include:</p>
+                <ul class="text-dark-grey">
+                    <li>A lump or thickening in the breast or underarm area.</li>
+                    <li>Changes in breast size, shape, or appearance, such as swelling or dimpling.</li>
+                    <li>Nipple discharge, inversion, or changes in nipple appearance.</li>
+                    <li>Redness, warmth, or pitting of the breast skin, resembling an orange peel.</li>
+                    <li>Pain in the breast or nipple that doesn’t go away.</li>
+                </ul>
+                <p class="text-dark-grey">If you notice any of these symptoms, consult a healthcare provider immediately for a professional evaluation.</p>
+
+                <h3 class="text-pink mt-4 fw-bold">Prevention and Risk Reduction</h3>
+                <p class="text-dark-grey">While some risk factors cannot be changed, such as genetics, lifestyle modifications can significantly reduce the risk of developing breast cancer. Key prevention strategies include:</p>
+                <ul class="text-dark-grey">
+                    <li>Maintaining a healthy weight through balanced diet and regular exercise.</li>
+                    <li>Limiting alcohol consumption and avoiding smoking.</li>
+                    <li>Undergoing regular breast cancer screenings, such as mammograms, starting at age 40 or earlier if recommended by a doctor.</li>
+                    <li>Breastfeeding, if possible, as it may lower risk.</li>
+                    <li>Discussing hormone therapy with a doctor, as long-term use may increase risk.</li>
+                </ul>
+
+                <h3 class="text-pink mt-4 fw-bold">Treatment Options</h3>
+                <p class="text-dark-grey">Treatment for breast cancer varies based on the stage, type, and individual health factors. Common approaches include:</p>
+                <ul class="text-dark-grey">
+                    <li><strong>Surgery</strong>: Lumpectomy or mastectomy to remove the tumor or breast tissue.</li>
+                    <li><strong>Radiation Therapy</strong>: Uses high-energy rays to target and destroy cancer cells.</li>
+                    <li><strong>Chemotherapy</strong>: Systemic treatment using drugs to kill cancer cells or stop their growth.</li>
+                    <li><strong>Hormone Therapy</strong>: For hormone-receptor-positive breast cancers, to block hormones that fuel cancer growth.</li>
+                    <li><strong>Targeted Therapy</strong>: Focuses on specific characteristics of cancer cells, such as HER2-positive cancers.</li>
+                </ul>
+                <p class="text-dark-grey">Early detection through tools like PinkScan can significantly improve treatment outcomes and survival rates.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Article Links -->
+    <div class="resources container my-5">
+        <h3 class="text-pink mt-4 text-center mb-4 fw-bold animate__animated animate__fadeInDown">Additional Resources</h3>
+        <div class="row g-3">
+            <div class="col-md-4 animate__animated animate__fadeInLeft">
+                <a href="https://www.cancer.org/cancer/breast-cancer.html" target="_blank" class="btn btn-outline-light-pink w-100">American Cancer Society - Breast Cancer</a>
+            </div>
+            <div class="col-md-4 animate__animated animate__fadeIn" style="animation-delay: 0.5s;">
+                <a href="https://www.who.int/news-room/fact-sheets/detail/breast-cancer" target="_blank" class="btn btn-outline-light-pink w-100">WHO - Breast Cancer Facts</a>
+            </div>
+            <div class="col-md-4 animate__animated animate__fadeInRight" style="animation-delay: 1.0s;">
+                <a href="https://www.mayoclinic.org/diseases-conditions/breast-cancer/symptoms-causes/syc-20352470" target="_blank" class="btn btn-outline-light-pink w-100">Mayo Clinic - Breast Cancer Overview</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer bg-white text-center py-4" style="border-top: 2px solid #ffb6c1;">
+        <div class="container">
+            <p class="text-grey mt-4 fw-medium animate__animated animate__fadeInUp">© 2025 PinkScan. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PinkScan</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="static/style.css">
+    <!-- Google Fonts for Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons (if needed) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Animate.css for animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fff; /* White background for light theme */
+            color: #333333; /* Dark grey text for primary content */
+            margin: 0;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        .navbar {
+            background: #fff; /* White background */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            padding: 10px 0;
+        }
+
+        .navbar-brand, .nav-link {
+            color: #333333 !important; /* Dark grey text for navbar */
+            font-weight: 600; /* Bold for emphasis */
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .navbar-brand:hover, .nav-link:hover {
+            color: #ffb6c1 !important; /* Light pink on hover */
+            transform: scale(1.05); /* Slight zoom on hover for interactivity */
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #ffb6c1, #ff69b4); /* Soft pink to hot pink gradient */
+            color: #fff; /* White text for contrast */
+            padding: 120px 20px 80px; /* Adjusted padding for fixed navbar and spacing */
+            text-align: center;
+            margin-top: 56px; /* Offset for fixed navbar */
+            border-radius: 0; /* Removed border radius for full-width effect */
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('path/to/pink-ribbon-background.png') no-repeat center center;
+            background-size: cover;
+            opacity: 0.1; /* Subtle background image for depth */
+            z-index: 1;
+        }
+
+        .hero > * {
+            position: relative;
+            z-index: 2; /* Ensure text/buttons are above background image */
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for readability */
+            animation: fadeInDownBig 1.8s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            animation: fadeInUpBig 1.8s ease-out 0.5s;
+        }
+
+        .btn-black {
+            background: #333333; /* Solid black button */
+            color: #fff; /* White text */
+            border-radius: 25px; /* Rounded corners for modern look */
+            padding: 14px 30px;
+            font-weight: 600;
+            border: none; /* Removed border for solid look */
+            animation: bounceIn 1.8s ease-out 1s;
+            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn-black:hover {
+            background: #222222; /* Darker black on hover */
+            color: #fff;
+            transform: scale(1.05); /* Slight zoom on hover */
+            box-shadow: 0 5px 15px rgba(51, 51, 51, 0.4); /* Subtle shadow on hover */
+        }
+
+        .btn-white {
+            background: #fff; /* Solid white button */
+            color: #333333; /* Dark grey text */
+            border-radius: 25px;
+            padding: 14px 30px;
+            font-weight: 600;
+            border: none; /* Removed border for solid look */
+            transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn-white:hover {
+            background: #f5f5f5; /* Soft grey on hover */
+            color: #333333;
+            transform: scale(1.05); /* Slight zoom on hover */
+            box-shadow: 0 5px 15px rgba(245, 245, 245, 0.4); /* Subtle shadow on hover */
+        }
+
+        .card {
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            background-color: #fff; /* White card background */
+            border: 1px solid #f5f5f5; /* Soft grey border */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 20px;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-title {
+            color: #ff69b4; /* Hot pink headings */
+            font-weight: 600;
+            font-size: 1.25rem;
+        }
+
+        .card-text {
+            color: #333333; /* Dark grey text */
+            font-size: 1rem;
+        }
+
+        /* Call to Action Section */
+        .cta-section {
+            background: #f5f5f5; /* Soft grey background for contrast */
+            padding: 60px 20px;
+            border-top: 2px solid #ffb6c1; /* Light pink border for separation */
+        }
+
+        .cta-section h2 {
+            color: #ff69b4; /* Hot pink heading */
+            font-weight: 700;
+            font-size: 2.5rem;
+        }
+
+        .cta-section p {
+            color: #333333; /* Dark grey text */
+            font-size: 1.25rem;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: #f5f5f5; /* Soft grey background for contrast */
+            padding: 60px 0;
+        }
+
+        .testimonials .card {
+            border: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            background-color: #fff; /* White card background */
+        }
+
+        .testimonials .card-text {
+            font-style: italic;
+            color: #666666; /* Medium grey for quotes */
+        }
+
+        .testimonials h6 {
+            color: #ff69b4; /* Hot pink for names */
+        }
+
+        /* Footer Section */
+        .footer {
+            background: #fff; /* White background */
+            color: #ff69b4; /* Hot pink text */
+            text-align: center;
+            padding: 20px;
+            border-top: 2px solid #ffb6c1; /* Light pink border */
+            margin-top: 50px;
+            font-weight: 500;
+        }
+
+        .footer a {
+            color: #ff69b4;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #ff69b4;
+            transform: scale(1.1); /* Slight zoom on hover */
+        }
+
+        /* Animations */
+        .animate__fadeInDownBig, .animate__fadeInUpBig, .animate__bounceIn, .animate__flipInX, .animate__tada, .animate__pulse {
+            animation-duration: 1.8s;
+        }
+
+        .animate__fadeInDownBig {
+            animation-delay: 0.2s;
+        }
+
+        .animate__fadeInUpBig {
+            animation-delay: 0.5s;
+        }
+
+        .animate__bounceIn {
+            animation-delay: 1s;
+        }
+
+        .animate__flipInX {
+            animation-delay: 0.3s;
+        }
+
+        .animate__tada {
+            animation-delay: 0.5s;
+            animation-iteration-count: 1;
+        }
+
+        .animate__pulse {
+            animation-delay: 1s;
+            animation-iteration-count: infinite;
+            animation-duration: 2s;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 80px 20px 60px;
+                margin-top: 56px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .btn-black, .btn-white {
+                padding: 10px 20px;
+            }
+
+            .card {
+                margin-bottom: 20px;
+            }
+
+            .cta-section, .testimonials {
+                padding: 40px 0;
+            }
+
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+
+            .cta-section p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand animate__animated animate__bounceIn" href="index.html" style="color: #333333; font-weight: bold;">PinkScan</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link animate__animated animate__fadeInLeft" href="index.html" style="color: #333333; font-weight: bold;">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link animate__animated animate__fadeInLeft" href="about.html" style="color: #333333; font-weight: bold; animation-delay: 0.2s;">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link animate__animated animate__fadeInLeft" href="http://localhost:8501" target="_blank" style="color: #333333; font-weight: bold; animation-delay: 0.4s;">Prediction Tool</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link animate__animated animate__fadeInLeft" href="contact.html" style="color: #333333; font-weight: bold; animation-delay: 0.6s;">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link animate__animated animate__fadeInLeft" href="learn_more.html" style="color: #333333; font-weight: bold; animation-delay: 0.8s;">Learn More</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero text-center py-5" style="background-color: #fff;">
+        <div class="container">
+            <span class="badge bg-dark border-light-pink rounded-pill mb-3 animate__animated animate__bounceIn" style="border: 2px solid #ffb6c1; background-color: #333333; position: relative;">
+                AI-Powered
+            </span>
+            <h1 class="display-3 fw-bold text-hot-pink mb-3 animate__animated animate__fadeInDownBig">PinkScan</h1>
+            <p class="lead text-dark-grey mb-4 animate__animated animate__fadeInUpBig">Stay ahead with early detection and smart decisions</p>
+            <div class="d-flex justify-content-center gap-3 animate__animated animate__zoomIn">
+                <a href="http://localhost:8501" class="btn btn-black btn-lg px-4 animate__animated animate__bounceIn" target="_blank" style="animation-delay: 1s;">Get Started</a>
+                <a href="learn_more.html" class="btn btn-white btn-lg px-4 animate__animated animate__bounceIn" style="color: #333333; animation-delay: 1.3s;">Learn More</a>
+            </div>
+            <p class="text-dark-grey mt-4 animate__animated animate__fadeInUpBig">Take the first step towards better health today—predict, protect, and thrive with PinkScan.</p>
+        </div>
+    </div>
+
+    <!-- Why Choose PinkScan Section -->
+    <div class="container my-5">
+        <h2 class="text-hot-pink text-center fw-bold mb-4 animate__animated animate__fadeInDown">Why Choose PinkScan?</h2>
+        <div class="row g-4">
+            <div class="col-md-4 animate__animated animate__flipInX">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-hot-pink">Advanced AI Technology</h5>
+                        <p class="card-text text-dark-grey">Utilizes state-of-the-art machine learning for precise, real-time breast cancer predictions based on global datasets.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 animate__animated animate__flipInX" style="animation-delay: 0.5s;">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-hot-pink">User-Friendly Design</h5>
+                        <p class="card-text text-dark-grey">Intuitive interface for all users, with multilingual support and easy navigation for quick, reliable results.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 animate__animated animate__flipInX" style="animation-delay: 1.0s;">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-hot-pink">Personalized Insights</h5>
+                        <p class="card-text text-dark-grey">Receive detailed PDF reports, dietary advice, and analytics to empower informed health decisions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action Section -->
+    <div class="cta-section text-center py-5" style="background-color: #f5f5f5; color: #333333;">
+        <div class="container">
+            <h2 class="display-5 fw-bold mb-3 animate__animated animate__fadeInDown">Join Thousands of Users Trusting PinkScan</h2>
+            <p class="lead mb-4 animate__animated animate__fadeInUp">Take the first step towards better health today—predict, protect, and thrive with PinkScan.</p>
+            <a href="http://localhost:8501" class="btn btn-light-pink btn-lg px-4 animate__animated animate__pulse" target="_blank">Get Started Now</a>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <div class="testimonials container my-5">
+        <h2 class="text-hot-pink text-center fw-bold mb-4 animate__animated animate__fadeInDown">What Our Users Say</h2>
+        <div class="row g-4">
+            <div class="col-md-4 animate__animated animate__tada">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body text-center">
+                        <p class="card-text">"PinkScan gave me peace of mind with its accurate predictions and detailed report. Highly recommended!"</p>
+                        <h6 class="text-hot-pink mt-3">— Ayushi Kundu</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 animate__animated animate__tada" style="animation-delay: 0.5s;">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body text-center">
+                        <p class="card-text">"The interface is so easy to use, and the results were delivered quickly. A life-saving tool!"</p>
+                        <h6 class="text-hot-pink mt-3">— Sneha Basu</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 animate__animated animate__tada" style="animation-delay: 1.0s;">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body text-center">
+                        <p class="card-text">"I love the personalized recommendations and the multilingual support. PinkScan is amazing!"</p>
+                        <h6 class="text-hot-pink mt-3">— Payel Agarwal</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer bg-white text-center py-4" style="border-top: 2px solid #ffb6c1;">
+        <div class="container">
+            <p class="mb-2 text-hot-pink fw-medium animate__animated animate__fadeInUp">© 2025 PinkScan. All rights reserved.</p>
+            <div class="d-flex justify-content-center gap-3 animate__animated animate__fadeInUp" style="animation-delay: 0.5s;">
+                <a href="https://www.facebook.com/pinkscan" target="_blank" class="text-hot-pink"><i class="fab fa-facebook fa-lg"></i></a>
+                <a href="https://www.twitter.com/pinkscan" target="_blank" class="text-hot-pink"><i class="fab fa-x-twitter fa-lg"></i></a>
+                <a href="https://www.instagram.com/pinkscan" target="_blank" class="text-hot-pink"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="https://www.linkedin.com/company/pinkscan" target="_blank" class="text-hot-pink"><i class="fab fa-linkedin fa-lg"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

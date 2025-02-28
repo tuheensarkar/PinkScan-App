@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PinkScan - About Us</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="static/style.css">
+    <!-- Google Fonts for Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons (if needed) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Animate.css for animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fff; /* White background */
+            color: #333333; /* Dark grey text */
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            background: #fff; /* White background */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            padding: 10px 0;
+        }
+
+        .navbar-brand, .nav-link {
+            color: #333333 !important; /* Dark grey text */
+            font-weight: 600;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .navbar-brand:hover, .nav-link:hover {
+            color: #ffd1dc !important; /* Soft pink on hover */
+            transform: scale(1.05);
+        }
+
+        .content {
+            background: #fff;
+            padding: 80px 20px 40px;
+            margin-top: 56px;
+        }
+
+        .developer-section {
+            background: linear-gradient(135deg, #ffb6c1, #ff69b4); /* Light pink to hot pink gradient */
+            padding: 60px 0;
+            position: relative;
+        }
+
+        .developer-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('path/to/pink-ribbon-background.png') no-repeat center center;
+            background-size: cover;
+            opacity: 0.1; /* Subtle pink ribbon background for depth */
+            z-index: 1;
+        }
+
+        .developer-section > * {
+            position: relative;
+            z-index: 2; /* Ensure content is above background image */
+        }
+
+        .developer-card {
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            background-color: #fff; /* White card background */
+            border: 2px solid #ffd1dc; /* Soft pink border for contrast */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .developer-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(255, 105, 180, 0.4); /* Hot pink shadow on hover */
+        }
+
+        .developer-name {
+            color: #ff69b4; /* Hot pink for developer names */
+            font-weight: 600;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .developer-name:hover {
+            color: #ffd1dc; /* Soft pink on hover */
+            transform: scale(1.05);
+        }
+
+        .developer-text {
+            color: #333333; /* Dark grey text */
+            font-size: 1rem;
+            margin-top: 5px;
+        }
+
+        .testimonials {
+            background: #f5f5f5; /* Soft grey background for contrast */
+            padding: 60px 0;
+        }
+
+        .testimonials .card {
+            border: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            background-color: #fff; /* White card background */
+        }
+
+        .testimonials .card-text {
+            font-style: italic;
+            color: #666666; /* Medium grey for quotes */
+        }
+
+        .testimonials h6 {
+            color: #ff69b4; /* Hot pink for names */
+        }
+
+        /* Animations */
+        .animate__fadeIn, .animate__slideInLeft, .animate__slideInRight, .animate__tada, .animate__fadeInDown {
+            animation-duration: 1.8s;
+        }
+
+        .animate__fadeIn {
+            animation-delay: 0.2s;
+        }
+
+        .animate__slideInLeft {
+            animation-delay: 0.4s;
+        }
+
+        .animate__slideInRight {
+            animation-delay: 0.6s;
+        }
+
+        .animate__tada {
+            animation-delay: 0.5s;
+            animation-iteration-count: 1;
+        }
+
+        .animate__fadeInDown {
+            animation-delay: 0.8s;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .content, .developer-section, .testimonials {
+                padding: 40px 0;
+            }
+
+            .developer-card {
+                margin-bottom: 20px;
+            }
+
+            .developer-name {
+                font-size: 1.2rem;
+            }
+
+            .developer-text {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand animate__animated animate__bounceIn" href="index.html" style="color: #333333; font-weight: bold;">PinkScan</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link animate__animated animate__fadeInLeft" href="index.html" style="color: #333333; font-weight: bold;">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link animate__animated animate__fadeInLeft" href="about.html" style="color: #333333; font-weight: bold; animation-delay: 0.2s;">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link animate__animated animate__fadeInLeft" href="http://localhost:8501" target="_blank" style="color: #333333; font-weight: bold; animation-delay: 0.4s;">Prediction Tool</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link animate__animated animate__fadeInLeft" href="contact.html" style="color: #333333; font-weight: bold; animation-delay: 0.6s;">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link animate__animated animate__fadeInLeft" href="learn_more.html" style="color: #333333; font-weight: bold; animation-delay: 0.8s;">Learn More</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About PinkScan Section -->
+    <div class="content container my-5 pt-5 animate__animated animate__fadeIn">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h1 class="text-pink mt-4 fw-bold">About PinkScan</h1>
+                <p class="lead text-dark-grey">PinkScan is a revolutionary AI-powered platform dedicated to early breast cancer detection, empowering individuals with cutting-edge technology and actionable insights. Our mission is to save lives through early intervention, accurate predictions, and personalized health recommendations.</p>
+                <h3 class="text-pink mt-4 fw-bold">Our Vision</h3>
+                <p class="text-dark-grey">We envision a world where breast cancer is detected early, managed effectively, and prevented through innovative technology and education. PinkScan aims to bridge the gap between medical expertise and everyday users, making health monitoring accessible to all. Our goals include:</p>
+                <ul class="text-dark-grey">
+                    <li>Reducing breast cancer mortality rates through early detection.</li>
+                    <li>Providing affordable, user-friendly tools for global communities.</li>
+                    <li>Promoting awareness and education about breast health.</li>
+                    <li>Collaborating with healthcare professionals to enhance outcomes.</li>
+                </ul>
+                <h3 class="text-pink mt-4 fw-bold">Our Technology</h3>
+                <p class="text-dark-grey">Powered by a Random Forest Classifier trained on the Breast Cancer Wisconsin (Diagnostic) Dataset, PinkScan analyzes 30 key features to predict whether a tumor is malignant or benign. Our platform offers real-time analytics, downloadable reports, and multilingual support to cater to a global audience. Key aspects include:</p>
+                <ul class="text-dark-grey">
+                    <li>Advanced machine learning models for high accuracy.</li>
+                    <li>Interactive dashboards for user-friendly data visualization.</li>
+                    <li>Secure, encrypted data handling to protect user privacy.</li>
+                    <li>Integration with mobile and web platforms for accessibility.</li>
+                    <li>Continuous updates based on the latest medical research.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Our Developers Section -->
+    <div class="developer-section py-5">
+        <div class="container">
+            <h2 class="text-hot-pink text-center mb-4 fw-bold animate__animated animate__fadeInDown">About Our Developers</h2>
+            <div class="row g-4">
+                <!-- Upper Row (3 Developers) -->
+                <div class="col-md-4 animate__animated animate__slideInLeft">
+                    <div class="developer-card">
+                        <div class="developer-name">Tuheen Sarkar</div>
+                        <p class="developer-text">Python Developer, passionate about AI-driven health solutions.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 animate__animated animate__slideInLeft" style="animation-delay: 0.5s;">
+                    <div class="developer-card">
+                        <div class="developer-name">Suraj Ray</div>
+                        <p class="developer-text">Software Engineer, specializing in user-friendly interfaces.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 animate__animated animate__slideInRight" style="animation-delay: 1.0s;">
+                    <div class="developer-card">
+                        <div class="developer-name">Debjit Mazumder</div>
+                        <p class="developer-text">Python Developer, focused on predictive modeling for health.</p>
+                    </div>
+                </div>
+
+                <!-- Lower Row (2 Developers) -->
+                <div class="col-md-6 animate__animated animate__slideInLeft" style="animation-delay: 1.5s;">
+                    <div class="developer-card">
+                        <div class="developer-name">Arpayan Basu</div>
+                        <p class="developer-text">Frontend Developer, enhancing PinkScan’s visual appeal.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 animate__animated animate__slideInRight" style="animation-delay: 2.0s;">
+                    <div class="developer-card">
+                        <div class="developer-name">Vikrant Singh</div>
+                        <p class="developer-text">Frontend Developer, ensuring robust system performance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <div class="testimonials bg-f5f5f5 py-5">
+        <div class="container">
+            <h2 class="text-hot-pink text-center mb-4 fw-bold animate__animated animate__fadeInDown">What Our Users Say</h2>
+            <div class="row g-4">
+                <div class="col-md-4 animate__animated animate__tada">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body text-center">
+                            <p class="card-text">"PinkScan gave me peace of mind with its accurate predictions and detailed report. Highly recommended!"</p>
+                            <h6 class="text-hot-pink mt-3">— Ayushi Kundu</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 animate__animated animate__tada" style="animation-delay: 0.5s;">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body text-center">
+                            <p class="card-text">"The interface is so easy to use, and the results were delivered quickly. A life-saving tool!"</p>
+                            <h6 class="text-hot-pink mt-3">— Sneha Basu </h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 animate__animated animate__tada" style="animation-delay: 1.0s;">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body text-center">
+                            <p class="card-text">"I love the personalized recommendations and the multilingual support. PinkScan is amazing!"</p>
+                            <h6 class="text-hot-pink mt-3">— Payel Agarwal</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer bg-white text-center py-4" style="border-top: 2px solid #ffd1dc;">
+        <div class="container">
+            <p class="mb-2 text-hot-pink fw-medium animate__animated animate__fadeInUp">© 2025 PinkScan. All rights reserved.</p>
+            <div class="d-flex justify-content-center gap-3 animate__animated animate__fadeInUp" style="animation-delay: 0.5s;">
+                <a href="https://www.facebook.com/pinkscan" target="_blank" class="text-hot-pink"><i class="fab fa-facebook fa-lg"></i></a>
+                <a href="https://www.twitter.com/pinkscan" target="_blank" class="text-hot-pink"><i class="fab fa-x-twitter fa-lg"></i></a>
+                <a href="https://www.instagram.com/pinkscan" target="_blank" class="text-hot-pink"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="https://www.linkedin.com/company/pinkscan" target="_blank" class="text-hot-pink"><i class="fab fa-linkedin fa-lg"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
