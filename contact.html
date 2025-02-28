@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PinkScan - Contact Us</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="static/style.css">
+    <!-- Google Fonts for Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Animate.css for animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fff; /* White background */
+            color: #333333; /* Dark grey text */
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            background: #fff; /* White background */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            padding: 10px 0;
+        }
+
+        .navbar-brand, .nav-link {
+            color: #333333 !important; /* Dark grey text */
+            font-weight: 600;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .navbar-brand:hover, .nav-link:hover {
+            color: #ffd1dc !important; /* Soft pink on hover */
+            transform: scale(1.05);
+        }
+
+        .content {
+            background: #fff;
+            padding: 80px 20px 40px;
+            margin-top: 56px;
+        }
+
+        .map-section {
+            background: linear-gradient(135deg, #ffb6c1, #ff69b4); /* Light pink to hot pink gradient */
+            padding: 60px 0;
+            position: relative;
+        }
+
+        .map-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('path/to/pink-ribbon-background.png') no-repeat center center;
+            background-size: cover;
+            opacity: 0.1; /* Subtle pink ribbon background for depth */
+            z-index: 1;
+        }
+
+        .map-section > * {
+            position: relative;
+            z-index: 2; /* Ensure content is above background image */
+        }
+
+        .btn-light-pink {
+            background: #ffb6c1; /* Light pink button */
+            color: #fff; /* White text */
+            border-radius: 25px;
+            padding: 14px 30px;
+            font-weight: 600;
+            border: none; /* Removed border for solid look */
+            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn-light-pink:hover {
+            background: #ff69b4; /* Hot pink on hover */
+            color: #fff;
+            transform: scale(1.05); /* Slight zoom on hover */
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4); /* Subtle hot pink shadow on hover */
+        }
+
+        form .form-control {
+            border-radius: 15px;
+            border: 2px solid #ffd1dc; /* Soft pink border for form inputs */
+            color: #333333;
+            background-color: #fff;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        form .form-control:focus {
+            border-color: #ff69b4; /* Hot pink on focus */
+            box-shadow: 0 0 8px rgba(255, 105, 180, 0.5); /* Hot pink glow on focus */
+            transform: scale(1.02); /* Slight zoom on focus */
+        }
+
+        form .form-control::placeholder {
+            color: #666666; /* Medium grey for placeholders */
+        }
+
+        /* Animations */
+        .animate__fadeIn, .animate__fadeInUp, .animate__bounceIn, .animate__fadeInDown {
+            animation-duration: 1.8s;
+        }
+
+        .animate__fadeIn {
+            animation-delay: 0.2s;
+        }
+
+        .animate__fadeInUp {
+            animation-delay: 0.5s;
+        }
+
+        .animate__bounceIn {
+            animation-delay: 1s;
+            animation-iteration-count: 1;
+        }
+
+        .animate__fadeInDown {
+            animation-delay: 0.8s;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .content, .map-section {
+                padding: 40px 0;
+            }
+
+            form .form-control {
+                margin-bottom: 15px;
+            }
+
+            .btn-light-pink {
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand animate__animated animate__bounceIn" href="index.html" style="color: #333333; font-weight: bold;">PinkScan</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link animate__animated animate__fadeInLeft" href="index.html" style="color: #333333; font-weight: bold;">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link animate__animated animate__fadeInLeft" href="about.html" style="color: #333333; font-weight: bold; animation-delay: 0.2s;">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link animate__animated animate__fadeInLeft" href="http://localhost:8501" target="_blank" style="color: #333333; font-weight: bold; animation-delay: 0.4s;">Prediction Tool</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link animate__animated animate__fadeInLeft" href="contact.html" style="color: #333333; font-weight: bold; animation-delay: 0.6s;">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link animate__animated animate__fadeInLeft" href="learn_more.html" style="color: #333333; font-weight: bold; animation-delay: 0.8s;">Learn More</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Content -->
+    <div class="content container my-5 pt-5 animate__animated animate__fadeIn">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h1 class="text-hot-pink mb-4 fw-bold">Contact Us</h1>
+                <p class="lead text-dark-grey">Have questions, feedback, or need support? We’re here to help! Reach out to our dedicated team.</p>
+                <p><strong style="color: #333333;">Email:</strong> pinkscancare@gmail.com</p>
+                <p><strong style="color: #333333;">Phone:</strong> +91 6291295759</p>
+                <p><strong style="color: #333333;">Address:</strong> Netaji Subhash Engineering College, Garia, West Bengal</p>
+                <h3 class="text-hot-pink mt-4 fw-bold">Get in Touch</h3>
+                <form class="mt-4 animate__animated animate__fadeInUp">
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Your Name" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" class="form-control" placeholder="Your Email" required>
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-light-pink animate__animated animate__bounceIn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Map Section -->
+    <div class="map-section py-5">
+        <div class="container">
+            <h2 class="text-hot-pink text-center mb-4 fw-bold animate__animated animate__fadeInDown">Find Us</h2>
+            <div class="ratio ratio-4x3 animate__animated animate__fadeIn">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3681.100311570717!2d88.412366!3d22.476296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02722b05a38e87%3A0x7106eb9a3d9a01ca!2sNetaji%20Subhash%20Engineering%20College%2C%20Techno%20City%2C%20Garia%2C%20Ranabhutia%2C%20West%20Bengal%20700152%2C%20India!5e0!3m2!1sen!2sus!4v1718876343113!5m2!1sen!2sus" 
+                        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div class="text-center mt-4 animate__animated animate__fadeInUp">
+                <h3 class="text-hot-pink mb-3 fw-bold">Follow Us</h3>
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="https://www.facebook.com/pinkscan" target="_blank" class="text-hot-pink animate__animated animate__bounceIn">
+                        <i class="fab fa-facebook fa-2x"></i>
+                    </a>
+                    <a href="https://www.twitter.com/pinkscan" target="_blank" class="text-hot-pink animate__animated animate__bounceIn" style="animation-delay: 0.5s;">
+                        <i class="fab fa-x-twitter fa-2x"></i>
+                    </a>
+                    <a href="https://www.instagram.com/pinkscan" target="_blank" class="text-hot-pink animate__animated animate__bounceIn" style="animation-delay: 1.0s;">
+                        <i class="fab fa-instagram fa-2x"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/pinkscan" target="_blank" class="text-hot-pink animate__animated animate__bounceIn" style="animation-delay: 1.5s;">
+                        <i class="fab fa-linkedin fa-2x"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer bg-white text-center py-4" style="border-top: 2px solid #ffd1dc;">
+        <div class="container">
+            <p class="mb-2 text-hot-pink fw-medium animate__animated animate__fadeInUp">© 2025 PinkScan. All rights reserved.</p>
+            <div class="d-flex justify-content-center gap-3 animate__animated animate__fadeInUp" style="animation-delay: 0.5s;">
+                <a href="https://www.facebook.com/pinkscan" target="_blank" class="text-hot-pink"><i class="fab fa-facebook fa-lg"></i></a>
+                <a href="https://www.twitter.com/pinkscan" target="_blank" class="text-hot-pink"><i class="fab fa-x-twitter fa-lg"></i></a>
+                <a href="https://www.instagram.com/pinkscan" target="_blank" class="text-hot-pink"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="https://www.linkedin.com/company/pinkscan" target="_blank" class="text-hot-pink"><i class="fab fa-linkedin fa-lg"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
