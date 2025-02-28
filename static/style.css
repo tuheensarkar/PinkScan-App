@@ -1,1 +1,205 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    background-color: #fff;
+    color: #000000;
+}
 
+.bg-white {
+    background-color: #fff !important;
+}
+
+.text-pink {
+    color: #ff69b4 !important;
+}
+
+.text-black {
+    color: #000000 !important;
+}
+
+.text-grey {
+    color: #808080 !important;
+}
+
+.btn-pink {
+    background-color: #ff69b4;
+    color: #fff;
+    border: none;
+}
+
+.btn-pink:hover {
+    background-color: #ff4d9e;
+    color: #fff;
+}
+
+.btn-black {
+    background-color: transparent;
+    color: #000000;
+    border: none;
+}
+
+.btn-black:hover {
+    background-color: #000000;
+    color: #fff;
+}
+
+.btn-outline-pink {
+    color: #ff69b4;
+    border: 2px solid #ff69b4;
+    background-color: transparent;
+}
+
+.btn-outline-pink:hover {
+    background-color: #ff69b4;
+    color: #fff;
+}
+
+.border-pink {
+    border: 2px solid #ff69b4 !important;
+}
+
+.border-black {
+    border: 2px solid #000000 !important;
+}
+
+.navbar {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #fff !important;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    color: #000000 !important;
+    font-weight: bold;
+}
+
+.nav-link {
+    font-size: 1.1rem;
+    color: #000000 !important;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #808080 !important;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 80px; /* Account for fixed navbar */
+    background-color: #fff;
+}
+
+.badge.bg-black.border-pink {
+    border: 2px solid #ff69b4 !important;
+}
+
+.lead {
+    font-size: 1.25rem;
+    color: #000000;
+}
+
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    color: #000000;
+}
+
+.card {
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+    color: #000000;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+    color: #ff69b4;
+}
+
+.card-text {
+    color: #000000;
+}
+
+form .form-control {
+    border-radius: 8px;
+    border: 1px solid #808080;
+    color: #000000;
+}
+
+form .btn-pink {
+    border-radius: 8px;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.list-group-item {
+    background-color: #fff;
+    color: #000000;
+    border-color: #808080;
+}
+
+.list-group-item:hover {
+    background-color: #f8f9fa;
+    color: #000000;
+}
+
+/* Animation Delays and Durations for Professional Effects */
+.animate__fadeIn, .animate__fadeInLeft, .animate__fadeInRight, .animate__fadeInUp, .animate__fadeInDown, .animate__flipInX, .animate__slideInLeft, .animate__slideInRight, .animate__tada, .animate__pulse, .animate__zoomIn, .animate__bounceIn {
+    animation-duration: 1.2s;
+}
+
+.animate__fadeIn {
+    animation-delay: 0.2s;
+}
+
+.animate__fadeInLeft {
+    animation-delay: 0.4s;
+}
+
+.animate__fadeInRight {
+    animation-delay: 0.6s;
+}
+
+.animate__fadeInUp {
+    animation-delay: 0.8s;
+}
+
+.animate__fadeInDown {
+    animation-delay: 1.0s;
+}
+
+.animate__flipInX {
+    animation-delay: 0.2s;
+}
+
+.animate__slideInLeft, .animate__slideInRight {
+    animation-delay: 0.4s;
+}
+
+.animate__tada {
+    animation-delay: 0.2s;
+    animation-iteration-count: 1;
+}
+
+.animate__pulse {
+    animation-delay: 0.8s;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+}
+
+.animate__zoomIn, .animate__bounceIn {
+    animation-delay: 1.0s;
+}
+
+/* Removed dark theme adjustments since we're focusing on a light theme */
